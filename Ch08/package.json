@@ -1,10 +1,13 @@
 {
-  "name": "Ch07",
+  "name": "Ch08",
   "version": "0.1.0",
-  "description": "Ch07",
+  "description": "Ch08",
   "main": "hello-world-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "dependencies": {
+	  "mysql":"*"
   },
   "repository": "",
   "keywords": [
@@ -12,10 +15,6 @@
     "eclipse",
     "nodeclipse"
   ],
-  "dependencies": {
-	"connect": "*",
-	"express": "*"
-  },
   "author": "",
   "license": "MIT",
   "readmeFilename": "README.md"

@@ -1,17 +1,22 @@
-var connect = require('connect');
+var express = require('express');
 var http = require('http');
-var app = connect();
+var app = express();
 
-app.use(function(req, res, next){
-	
-	console.log(" in comes a "+ req.method+ " to " + req.url);
-	next();
-    
-}).listen(1337, '127.0.0.1');
-
-app.use(function(req, res){
+app.all("*", function(req, res, next){
 	res.writeHead(200, {"Content-Type": "text/plain"});
-	res.end("Hello World\n");
+	next();
+});
+
+app.get("/", function(req, res){
+	res.end("main page");
+});
+
+app.get("/hi/:user", function(req, res){
+	res.end("hi , "+req.params.user + ".");
+});
+
+app.get("*", function(req, res){
+	res.end("404");
 });
 
 http.createServer(app).listen(1337);
